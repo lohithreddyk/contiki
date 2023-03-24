@@ -4,7 +4,7 @@ RPL is a routing protocol for low-power and lossy constrained node networks.It c
 
 - **DODAG Information Object (DIO)**:it stores information including   rank of a node, RPL Instance, the IPv6 address of the root or sink and so on.
 - **Destination Advertisement Object (DAO)**: it consists of information that can used for downward traffic towards child nodes.
-- ** DODAG Information Solicitation (DIS)**: Used by nodes to request graph related information from the neighboring nodes.
+- **DODAG Information Solicitation (DIS)**: Used by nodes to request graph related information from the neighboring nodes.
 - **Destination Advertisement Object Acknowledgement (DAOACK)**: Sent by a DAO recipient in response to a DAO message. 
 
 Whenever a new node enters into a rpl network, it starts sending a DIS message to all nodes and waits for DIO message to be received whcih contains details regarding node id and objective code point. The DIO messages are broadcasted  at particular intervals based on the trickle algorithm. The node on recieving the info , calculates the rank . and based on that it selects a parent . To  send a message downwards , node should send a DAO message  containing the routable fixes up the tree.To prevent the loops ,RPL  does not allow the data  going in down direction and sent from a desecendent . RPL uses two header options which
